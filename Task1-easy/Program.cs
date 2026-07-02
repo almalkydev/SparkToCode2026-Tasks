@@ -40,3 +40,13 @@ else
     Console.WriteLine("Odd");
 
 
+// task 4 - Voting Eligibility
+Console.Write("Enter your age: ");
+int age = int.Parse(Console.ReadLine());
+Console.Write("do you have a national ID? (yes/no):");
+bool hasID = Console.ReadLine() == "yes";
+
+if (age >= 18 && hasID)
+    Console.WriteLine("You can vote");
+else
+    Console.WriteLine("You cannot vote");
