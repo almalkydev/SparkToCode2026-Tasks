@@ -1,0 +1,14 @@
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\bin\Debug\net10.0\Task1-easy.exe
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\bin\Debug\net10.0\Task1-easy.deps.json
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\bin\Debug\net10.0\Task1-easy.runtimeconfig.json
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\bin\Debug\net10.0\Task1-easy.dll
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\bin\Debug\net10.0\Task1-easy.pdb
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\obj\Debug\net10.0\Task1-easy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\obj\Debug\net10.0\Task1-easy.AssemblyInfoInputs.cache
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\obj\Debug\net10.0\Task1-easy.AssemblyInfo.cs
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\obj\Debug\net10.0\Task1-easy.csproj.CoreCompileInputs.cache
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\obj\Debug\net10.0\Task1-easy.dll
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\obj\Debug\net10.0\refint\Task1-easy.dll
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\obj\Debug\net10.0\Task1-easy.pdb
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\obj\Debug\net10.0\Task1-easy.genruntimeconfig.cache
+C:\Users\zando\source\repos\Task1-easy\Task1-easy\obj\Debug\net10.0\ref\Task1-easy.dll
