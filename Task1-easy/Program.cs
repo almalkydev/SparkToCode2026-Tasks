@@ -50,3 +50,20 @@ if (age >= 18 && hasID)
     Console.WriteLine("You can vote");
 else
     Console.WriteLine("You cannot vote");
+
+
+// task 5 - grade evaluation
+
+Console.Write("Enter your grade (A/B/C/D/F):");
+char grade = char.Parse(Console.ReadLine());
+
+switch (grade)
+{
+    case 'A': Console.WriteLine("Excellent"); break;
+    case 'B': Console.WriteLine("Very Good"); break;
+    case 'C': Console.WriteLine("Good"); break;
+    case 'D': Console.WriteLine("Pass"); break;
+    case 'F': Console.WriteLine("Fail"); break;
+    default: Console.WriteLine("Invalid grade"); break;
+}
+
