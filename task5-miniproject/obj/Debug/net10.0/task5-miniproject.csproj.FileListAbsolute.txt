@@ -1,0 +1,15 @@
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\bin\Debug\net10.0\task5-miniproject.exe
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\bin\Debug\net10.0\task5-miniproject.deps.json
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\bin\Debug\net10.0\task5-miniproject.runtimeconfig.json
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\bin\Debug\net10.0\task5-miniproject.dll
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\bin\Debug\net10.0\task5-miniproject.pdb
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\obj\Debug\net10.0\task5-miniproject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\obj\Debug\net10.0\task5-miniproject.AssemblyInfoInputs.cache
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\obj\Debug\net10.0\task5-miniproject.AssemblyInfo.cs
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\obj\Debug\net10.0\task5-miniproject.csproj.CoreCompileInputs.cache
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\obj\Debug\net10.0\task5-miniproject.sourcelink.json
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\obj\Debug\net10.0\task5-miniproject.dll
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\obj\Debug\net10.0\refint\task5-miniproject.dll
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\obj\Debug\net10.0\task5-miniproject.pdb
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\obj\Debug\net10.0\task5-miniproject.genruntimeconfig.cache
+C:\Users\zando\source\repos\almalkydev\SparkToCode2026-Tasks\task5-miniproject\obj\Debug\net10.0\ref\task5-miniproject.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "task5-miniproject/1.0.0": {
+        "runtime": {
+          "task5-miniproject.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "task5-miniproject/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
