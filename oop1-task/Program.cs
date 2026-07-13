@@ -413,3 +413,17 @@ class Program
         Console.WriteLine("Grade: " + s.Grade);
         Console.WriteLine("Status: " + status);
     }
+
+    static void Case12()
+    {
+        BankAccount acc = PickAccount();
+        string status;
+        if (acc.Balance < 50)
+            status = "Low Balance";
+        else if (acc.Balance <= 1000)
+            status = "Healthy";
+        else
+            status = "Premium";
+
+        Console.WriteLine("Status: " + status);
+    }
