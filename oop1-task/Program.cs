@@ -427,3 +427,27 @@ class Program
 
         Console.WriteLine("Status: " + status);
     }
+
+    static void Case13()
+    {
+        Product p = PickProduct();
+        Console.Write("Enter quantity to sell: ");
+        int qty;
+        if (!int.TryParse(Console.ReadLine(), out qty))
+        {
+            Console.WriteLine("Invalid quantity.");
+            return;
+        }
+
+        if (qty > p.StockQuantity)
+        {
+            int needed = qty - p.StockQuantity;
+            Console.WriteLine("Not enough stock. You need " + needed + " more units.");
+        }
+        else
+        {
+            p.Sell(qty);
+            double revenue = qty * p.Price;
+            Console.WriteLine("Sale complete. Revenue: " + revenue);
+        }
+    }
