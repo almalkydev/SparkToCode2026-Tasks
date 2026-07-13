@@ -335,3 +335,24 @@ class Program
         else
             Console.WriteLine("Both accounts have equal balance.");
     }
+
+    static void Case8()
+    {
+        Product p = PickProduct();
+        Console.Write("Enter quantity to restock: ");
+        int qty;
+        if (int.TryParse(Console.ReadLine(), out qty))
+        {
+            p.Restock(qty);
+            if (p.StockQuantity < 10)
+                Console.WriteLine("Stock level: Low");
+            else if (p.StockQuantity < 50)
+                Console.WriteLine("Stock level: Moderate");
+            else
+                Console.WriteLine("Stock level: Well Stocked");
+        }
+        else
+        {
+            Console.WriteLine("Invalid quantity.");
+        }
+    }
