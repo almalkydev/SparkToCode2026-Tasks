@@ -316,3 +316,12 @@ class Program
         double value = p.GetInventoryValue();
         Console.WriteLine("Total inventory value: " + value);
     }
+
+    static void Case6()
+    {
+        Student s = PickStudent();
+        Console.Write("Enter email: ");
+        string email = Console.ReadLine();
+        s.Register(email);
+        Console.WriteLine(s.Name + " has been successfully registered.");
+    }
