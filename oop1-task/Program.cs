@@ -507,3 +507,12 @@ class Program
     {
         Console.WriteLine("Total students created: " + Student.GetTotalStudents());
     }
+
+    static void Case18()
+    {
+        BankAccount acc = PickAccount();
+        if (acc.IsOverdrawn)
+            Console.WriteLine(acc.HolderName + "'s account is overdrawn.");
+        else
+            Console.WriteLine(acc.HolderName + "'s account is not overdrawn.");
+    }
