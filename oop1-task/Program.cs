@@ -468,3 +468,21 @@ class Program
             if (acc.Balance < 100) Console.WriteLine("- Balance is below 100");
         }
     }
+
+    static void Case15()
+    {
+        BankAccount acc = PickAccount();
+        double before = acc.Balance;
+
+        if (acc.Balance < 50)
+        {
+            double topUp = 100 - acc.Balance;
+            acc.Deposit(topUp);
+            Console.WriteLine("Balance before: " + before);
+            Console.WriteLine("Balance after: " + acc.Balance);
+        }
+        else
+        {
+            Console.WriteLine("No top-up needed.");
+        }
+    }
