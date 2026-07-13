@@ -382,3 +382,24 @@ class Program
             Console.WriteLine("Transfer failed: not enough balance in source account.");
         }
     }
+
+    static void Case10()
+    {
+        Student s = PickStudent();
+        Console.Write("Enter new grade: ");
+        int grade;
+        if (!int.TryParse(Console.ReadLine(), out grade))
+        {
+            Console.WriteLine("Invalid input: grade must be a number.");
+            return;
+        }
+
+        if (grade < 0 || grade > 100)
+        {
+            Console.WriteLine("Invalid grade: must be between 0 and 100.");
+            return;
+        }
+
+        s.Grade = grade;
+        Console.WriteLine("Grade updated to " + grade);
+    }
