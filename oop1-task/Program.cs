@@ -14,3 +14,24 @@ class BankAccount
         HolderName = holder;
         Balance = balance;
     }
+    public void Deposit(double amount)
+    {
+        Balance += amount;
+        SendEmail();
+    }
+
+    public void Withdraw(double amount)
+    {
+        if (Balance >= amount)
+            Balance -= amount;
+        else
+            Console.WriteLine("Not enough balance to withdraw.");
+
+        SendEmail();
+    }
+
+    public double CheckBalance()
+    {
+        PrintInformation();
+        return Balance;
+    }
