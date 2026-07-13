@@ -403,3 +403,13 @@ class Program
         s.Grade = grade;
         Console.WriteLine("Grade updated to " + grade);
     }
+
+    static void Case11()
+    {
+        Student s = PickStudent();
+        string status = s.Grade >= 60 ? "Pass" : "Fail";
+        Console.WriteLine("Name: " + s.Name);
+        Console.WriteLine("Address: " + s.Address);
+        Console.WriteLine("Grade: " + s.Grade);
+        Console.WriteLine("Status: " + status);
+    }
