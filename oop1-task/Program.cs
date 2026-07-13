@@ -516,3 +516,21 @@ class Program
         else
             Console.WriteLine(acc.HolderName + "'s account is not overdrawn.");
     }
+
+    static void Case19()
+    {
+        Student s = PickStudent();
+        Console.Write("Enter 4-digit PIN: ");
+        string input = Console.ReadLine();
+        int pin;
+        if (input.Length == 4 && int.TryParse(input, out pin))
+        {
+            s.Pin = pin;
+            Console.WriteLine("PIN set successfully.");
+        }
+        else
+        {
+            Console.WriteLine("Invalid PIN. Must be 4 digits.");
+        }
+    }
+}
