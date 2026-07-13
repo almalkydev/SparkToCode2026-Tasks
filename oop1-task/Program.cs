@@ -35,3 +35,12 @@ class BankAccount
         PrintInformation();
         return Balance;
     }
+    private void PrintInformation()
+    {
+        Console.WriteLine("Holder: " + HolderName + ", Balance: " + Balance);
+    }
+
+    private void SendEmail()
+    {
+        Console.WriteLine("Email sent to " + HolderName);
+    }
