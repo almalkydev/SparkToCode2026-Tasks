@@ -486,3 +486,19 @@ class Program
             Console.WriteLine("No top-up needed.");
         }
     }
+
+    static void Case16()
+    {
+        Console.Write("Enter account number: ");
+        int accNum = int.Parse(Console.ReadLine());
+        Console.Write("Enter holder name: ");
+        string holder = Console.ReadLine();
+        Console.Write("Enter starting balance: ");
+        double balance = double.Parse(Console.ReadLine());
+
+        newAccount = new BankAccount(accNum, holder, balance);
+        Console.WriteLine("New account created:");
+        Console.WriteLine("Account Number: " + newAccount.AccountNumber);
+        Console.WriteLine("Holder: " + newAccount.HolderName);
+        Console.WriteLine("Balance: " + newAccount.Balance);
+    }
