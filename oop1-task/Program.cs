@@ -94,3 +94,9 @@ class Student
         set { pin = value; }
     }
 }
+
+class Product
+{
+    public string ProductName;
+    public double Price;
+    public int StockQuantity;
