@@ -44,3 +44,9 @@ class BankAccount
     {
         Console.WriteLine("Email sent to " + HolderName);
     }
+    // Case 18 - read-only property
+    public bool IsOverdrawn
+    {
+        get { return Balance < 0; }
+    }
+}
