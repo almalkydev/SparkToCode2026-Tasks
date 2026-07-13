@@ -82,3 +82,8 @@ class Student
     {
         return totalStudents;
     }
+
+    private void SendEmail()
+    {
+        Console.WriteLine(Name + " has been registered.");
+    }
