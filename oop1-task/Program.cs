@@ -451,3 +451,20 @@ class Program
             Console.WriteLine("Sale complete. Revenue: " + revenue);
         }
     }
+
+    static void Case14()
+    {
+        Student s = PickStudent();
+        BankAccount acc = PickAccount();
+
+        if (s.Grade >= 80 && acc.Balance >= 100)
+        {
+            Console.WriteLine("Eligible");
+        }
+        else
+        {
+            Console.WriteLine("Not eligible because:");
+            if (s.Grade < 80) Console.WriteLine("- Grade is below 80");
+            if (acc.Balance < 100) Console.WriteLine("- Balance is below 100");
+        }
+    }
