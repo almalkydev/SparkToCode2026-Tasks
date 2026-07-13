@@ -5,6 +5,7 @@ class BankAccount
     public int AccountNumber;
     public string HolderName;
     public double Balance;
+
     public BankAccount() { }
 
     // Case 16 - parameterized constructor
@@ -14,6 +15,7 @@ class BankAccount
         HolderName = holder;
         Balance = balance;
     }
+
     public void Deposit(double amount)
     {
         Balance += amount;
@@ -35,6 +37,7 @@ class BankAccount
         PrintInformation();
         return Balance;
     }
+
     private void PrintInformation()
     {
         Console.WriteLine("Holder: " + HolderName + ", Balance: " + Balance);
@@ -44,9 +47,22 @@ class BankAccount
     {
         Console.WriteLine("Email sent to " + HolderName);
     }
+
     // Case 18 - read-only property
     public bool IsOverdrawn
     {
         get { return Balance < 0; }
     }
 }
+
+class Student
+{
+    public int Grade;
+    public string Name;
+    public string Address;
+    private string email;
+    int age;
+
+    private static int totalStudents = 0; // Case 17
+
+    private int pin; // Case 19
