@@ -66,3 +66,8 @@ class Student
     private static int totalStudents = 0; // Case 17
 
     private int pin; // Case 19
+
+    public Student()
+    {
+        totalStudents++;
+    }
