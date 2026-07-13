@@ -87,3 +87,10 @@ class Student
     {
         Console.WriteLine(Name + " has been registered.");
     }
+
+    // Case 19 - write-only property
+    public int Pin
+    {
+        set { pin = value; }
+    }
+}
