@@ -133,3 +133,13 @@ class Product
         Console.WriteLine("Transaction logged for " + ProductName);
     }
 }
+
+class Program
+{
+    static BankAccount account1 = new BankAccount();
+    static BankAccount account2 = new BankAccount();
+    static Student student1 = new Student();
+    static Student student2 = new Student();
+    static Product product1 = new Product();
+    static Product product2 = new Product();
+    static BankAccount newAccount = null; // used in Case 16
