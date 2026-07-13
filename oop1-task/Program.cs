@@ -235,3 +235,30 @@ class Program
         Console.WriteLine("20. Exit");
         Console.Write("Choose an option: ");
     }
+
+    static BankAccount PickAccount()
+    {
+        Console.WriteLine("1) " + account1.HolderName + "  2) " + account2.HolderName);
+        Console.Write("Choose account: ");
+        string input = Console.ReadLine();
+        if (input == "1") return account1;
+        return account2;
+    }
+
+    static Student PickStudent()
+    {
+        Console.WriteLine("1) " + student1.Name + "  2) " + student2.Name);
+        Console.Write("Choose student: ");
+        string input = Console.ReadLine();
+        if (input == "1") return student1;
+        return student2;
+    }
+
+    static Product PickProduct()
+    {
+        Console.WriteLine("1) " + product1.ProductName + "  2) " + product2.ProductName);
+        Console.Write("Choose product: ");
+        string input = Console.ReadLine();
+        if (input == "1") return product1;
+        return product2;
+    }
