@@ -122,3 +122,14 @@ class Product
         PrintDetails();
         return Price * StockQuantity;
     }
+
+    private void PrintDetails()
+    {
+        Console.WriteLine(ProductName + " - Price: " + Price + ", Stock: " + StockQuantity);
+    }
+
+    private void LogTransaction()
+    {
+        Console.WriteLine("Transaction logged for " + ProductName);
+    }
+}
