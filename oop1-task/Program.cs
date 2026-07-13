@@ -100,3 +100,25 @@ class Product
     public string ProductName;
     public double Price;
     public int StockQuantity;
+
+    public void Sell(int quantity)
+    {
+        if (quantity <= StockQuantity)
+            StockQuantity -= quantity;
+        else
+            Console.WriteLine("Not enough stock available.");
+
+        LogTransaction();
+    }
+
+    public void Restock(int quantity)
+    {
+        StockQuantity += quantity;
+        LogTransaction();
+    }
+
+    public double GetInventoryValue()
+    {
+        PrintDetails();
+        return Price * StockQuantity;
+    }
