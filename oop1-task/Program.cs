@@ -71,3 +71,14 @@ class Student
     {
         totalStudents++;
     }
+
+    public void Register(string Email)
+    {
+        email = Email;
+        SendEmail();
+    }
+
+    public static int GetTotalStudents()
+    {
+        return totalStudents;
+    }
