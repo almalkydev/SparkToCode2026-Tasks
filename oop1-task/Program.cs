@@ -262,3 +262,9 @@ class Program
         if (input == "1") return product1;
         return product2;
     }
+
+    static void Case1()
+    {
+        BankAccount acc = PickAccount();
+        acc.CheckBalance();
+    }
