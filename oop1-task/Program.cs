@@ -277,3 +277,19 @@ class Program
         s.Address = newAddress;
         Console.WriteLine("Address updated to " + newAddress);
     }
+
+    static void Case3()
+    {
+        BankAccount acc = PickAccount();
+        Console.Write("Enter deposit amount: ");
+        double amount;
+        if (double.TryParse(Console.ReadLine(), out amount))
+        {
+            acc.Deposit(amount);
+            Console.WriteLine(acc.HolderName + "'s new balance: " + acc.Balance);
+        }
+        else
+        {
+            Console.WriteLine("Invalid amount.");
+        }
+    }
