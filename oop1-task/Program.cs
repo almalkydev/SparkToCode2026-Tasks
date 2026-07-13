@@ -356,3 +356,29 @@ class Program
             Console.WriteLine("Invalid quantity.");
         }
     }
+
+    static void Case9()
+    {
+        Console.WriteLine("Source account:");
+        BankAccount source = PickAccount();
+        Console.WriteLine("Destination account:");
+        BankAccount destination = PickAccount();
+        Console.Write("Enter amount to transfer: ");
+        double amount;
+        if (!double.TryParse(Console.ReadLine(), out amount))
+        {
+            Console.WriteLine("Invalid amount.");
+            return;
+        }
+
+        if (source.Balance >= amount)
+        {
+            source.Withdraw(amount);
+            destination.Deposit(amount);
+            Console.WriteLine("Transfer successful.");
+        }
+        else
+        {
+            Console.WriteLine("Transfer failed: not enough balance in source account.");
+        }
+    }
