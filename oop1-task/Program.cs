@@ -502,3 +502,8 @@ class Program
         Console.WriteLine("Holder: " + newAccount.HolderName);
         Console.WriteLine("Balance: " + newAccount.Balance);
     }
+
+    static void Case17()
+    {
+        Console.WriteLine("Total students created: " + Student.GetTotalStudents());
+    }
