@@ -309,3 +309,10 @@ class Program
             Console.WriteLine("Invalid amount.");
         }
     }
+
+    static void Case5()
+    {
+        Product p = PickProduct();
+        double value = p.GetInventoryValue();
+        Console.WriteLine("Total inventory value: " + value);
+    }
