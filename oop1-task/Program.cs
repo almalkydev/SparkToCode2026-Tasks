@@ -268,3 +268,12 @@ class Program
         BankAccount acc = PickAccount();
         acc.CheckBalance();
     }
+
+    static void Case2()
+    {
+        Student s = PickStudent();
+        Console.Write("Enter new address: ");
+        string newAddress = Console.ReadLine();
+        s.Address = newAddress;
+        Console.WriteLine("Address updated to " + newAddress);
+    }
