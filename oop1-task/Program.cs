@@ -293,3 +293,19 @@ class Program
             Console.WriteLine("Invalid amount.");
         }
     }
+
+    static void Case4()
+    {
+        BankAccount acc = PickAccount();
+        Console.Write("Enter withdrawal amount: ");
+        double amount;
+        if (double.TryParse(Console.ReadLine(), out amount))
+        {
+            acc.Withdraw(amount);
+            Console.WriteLine("Balance: " + acc.Balance);
+        }
+        else
+        {
+            Console.WriteLine("Invalid amount.");
+        }
+    }
