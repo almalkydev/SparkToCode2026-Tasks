@@ -505,4 +505,60 @@ class Program
 			Console.WriteLine($"Overall average price: OMR {overallAvg:F2}");
 		}
 	}
+
+	// case 11
+	static void CheckOutGuest()
+	{
+		Console.WriteLine("--- Check Out a Guest ---");
+
+		Console.Write("Enter guest ID: ");
+		string guestId = Console.ReadLine();
+
+		Guest guest = guests.FirstOrDefault(g => g.GuestId == guestId);
+		if (guest == null)
+		{
+			Console.WriteLine("Guest not found.");
+			return;
+		}
+
+		if (guest.RoomNumber == "Not Assigned")
+		{
+			Console.WriteLine("This guest has no active booking.");
+			return;
+		}
+
+		Room room = rooms.FirstOrDefault(r => r.RoomNumber.ToString() == guest.RoomNumber);
+
+		Console.WriteLine("--- Final Bill ---");
+		Console.WriteLine($"Guest: {guest.GuestName}");
+		Console.WriteLine($"Room: {guest.RoomNumber} ({room?.RoomType})");
+		Console.WriteLine($"Check-in: {guest.CheckInDate}");
+		Console.WriteLine($"Total nights: {guest.TotalNights}");
+		Console.WriteLine($"Price per night: OMR {room?.PricePerNight:F2}");
+		Console.WriteLine($"Total cost: OMR {guest.CalculateTotalCost(rooms):F2}");
+
+		Console.Write("Confirm checkout? (Y/N): ");
+		string confirm = Console.ReadLine();
+
+		if (confirm.ToUpper() != "Y")
+		{
+			Console.WriteLine("Checkout cancelled.");
+			return;
+		}
+
+		if (room != null)
+		{
+			room.IsAvailable = true;
+		}
+		guests.Remove(guest);
+
+		Console.WriteLine("Guest checked out successfully.");
+		Console.WriteLine($"Remaining guests: {guests.Count}");
+		Console.WriteLine($"Remaining rooms: {rooms.Count}");
+		if (room != null)
+		{
+			bool nowAvailable = rooms.Any(r => r.RoomNumber == room.RoomNumber && r.IsAvailable);
+			Console.WriteLine($"Room {room.RoomNumber} available again: {nowAvailable}");
+		}
+	}
 }
