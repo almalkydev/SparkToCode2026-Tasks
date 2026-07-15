@@ -634,4 +634,29 @@ class Program
 		Console.WriteLine($"Updated total nights: {guest.TotalNights}");
 		Console.WriteLine($"New total cost: OMR {guest.CalculateTotalCost(rooms):F2}");
 	}
+
+	// case 14
+	static void HighestRevenueBooking()
+	{
+		Console.WriteLine("--- Highest Revenue Booking ---");
+
+		var activeGuests = guests.Where(g => g.RoomNumber != "Not Assigned").ToList();
+
+		if (activeGuests.Count == 0)
+		{
+			Console.WriteLine("No active bookings recorded.");
+			return;
+		}
+
+		var topBooking = activeGuests
+			.Select(g => new { g.GuestName, g.RoomNumber, Cost = g.CalculateTotalCost(rooms) })
+			.OrderByDescending(x => x.Cost)
+			.Take(1)
+			.First();
+
+		Console.WriteLine("Top earning booking:");
+		Console.WriteLine($"Guest: {topBooking.GuestName}");
+		Console.WriteLine($"Room: {topBooking.RoomNumber}");
+		Console.WriteLine($"Total cost: OMR {topBooking.Cost:F2}");
+	}
 }
