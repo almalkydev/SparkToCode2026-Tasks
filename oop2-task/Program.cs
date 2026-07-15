@@ -561,4 +561,43 @@ class Program
 			Console.WriteLine($"Room {room.RoomNumber} available again: {nowAvailable}");
 		}
 	}
+
+	// case 12
+	static void RemoveUnavailableRooms()
+	{
+		Console.WriteLine("--- Remove Unavailable Rooms ---");
+
+		var removable = rooms.Where(r => !r.IsAvailable && !guests.Any(g => g.RoomNumber == r.RoomNumber.ToString()))
+							  .OrderBy(r => r.RoomNumber).ToList();
+
+		if (removable.Count == 0)
+		{
+			Console.WriteLine("All unavailable rooms are currently occupied. No rooms can be decommissioned.");
+			return;
+		}
+
+		Console.WriteLine($"{removable.Count} room(s) can be removed:");
+		foreach (Room r in removable)
+		{
+			Console.WriteLine($"Room {r.RoomNumber} | {r.RoomType} | OMR {r.PricePerNight:F2}");
+		}
+
+		Console.Write("Confirm removal? (Y/N): ");
+		string confirm = Console.ReadLine();
+
+		if (confirm.ToUpper() != "Y")
+		{
+			Console.WriteLine("No rooms were removed.");
+			return;
+		}
+
+		rooms.RemoveAll(r => !r.IsAvailable && !guests.Any(g => g.RoomNumber == r.RoomNumber.ToString()));
+
+		Console.WriteLine($"Rooms removed. Total rooms now: {rooms.Count}");
+		var remaining = rooms.Select(r => $"{r.RoomNumber} ({r.RoomType})");
+		foreach (string line in remaining)
+		{
+			Console.WriteLine(line);
+		}
+	}
 }
