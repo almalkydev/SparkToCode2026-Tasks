@@ -475,4 +475,34 @@ class Program
 			Console.WriteLine($"{g.GuestId} | {g.GuestName} | Room: {g.RoomNumber}");
 		}
 	}
+
+	// case 10
+	static void RoomTypeBreakdownReport()
+	{
+		Console.WriteLine("--- Room Type Breakdown Report ---");
+
+		string[] types = { "Single", "Double", "Suite" };
+
+		foreach (string type in types)
+		{
+			int count = rooms.Count(r => r.RoomType.ToLower() == type.ToLower());
+			Console.Write($"{type}: {count} room(s)");
+
+			if (count == 0)
+			{
+				Console.WriteLine(" — Average price: N/A");
+			}
+			else
+			{
+				double avg = rooms.Where(r => r.RoomType.ToLower() == type.ToLower()).Average(r => r.PricePerNight);
+				Console.WriteLine($" — Average price: OMR {avg:F2}");
+			}
+		}
+
+		if (rooms.Count > 0)
+		{
+			double overallAvg = rooms.Average(r => r.PricePerNight);
+			Console.WriteLine($"Overall average price: OMR {overallAvg:F2}");
+		}
+	}
 }
