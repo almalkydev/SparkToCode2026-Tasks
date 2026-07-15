@@ -384,4 +384,46 @@ class Program
 			}
 		}
 	}
+
+	// case 7
+	static void GuestAndBookingStatistics()
+	{
+		Console.WriteLine("--- Guest & Booking Statistics ---");
+
+		int totalGuests = guests.Count();
+		int guestsWithRoom = guests.Count(g => g.RoomNumber != "Not Assigned");
+		int totalRooms = rooms.Count();
+		int bookedRooms = rooms.Count(r => !r.IsAvailable);
+
+		Console.WriteLine($"Total registered guests: {totalGuests}");
+		Console.WriteLine($"Guests with a room assigned: {guestsWithRoom}");
+		Console.WriteLine($"Total rooms: {totalRooms}");
+		Console.WriteLine($"Booked rooms: {bookedRooms}");
+
+		var activeGuests = guests.Where(g => g.RoomNumber != "Not Assigned").ToList();
+
+		if (activeGuests.Count == 0)
+		{
+			Console.WriteLine("No active bookings recorded.");
+			return;
+		}
+
+		double avgNights = activeGuests.Average(g => g.TotalNights);
+		Console.WriteLine($"Average nights (active bookings): {avgNights:F2}");
+
+		var topSpenders = activeGuests.OrderByDescending(g => g.CalculateTotalCost(rooms)).Take(3).ToList();
+		Console.WriteLine("Top 3 highest-spending guests:");
+		foreach (Guest g in topSpenders)
+		{
+			Console.WriteLine($"{g.GuestName} — Room {g.RoomNumber} — OMR {g.CalculateTotalCost(rooms):F2}");
+		}
+
+		Console.WriteLine("Booking summary:");
+		var summaryLines = activeGuests.Select(g =>
+			$"{g.GuestName} — Room {g.RoomNumber} — {g.TotalNights} nights — OMR {g.CalculateTotalCost(rooms):F2}");
+		foreach (string line in summaryLines)
+		{
+			Console.WriteLine(line);
+		}
+	}
 }
