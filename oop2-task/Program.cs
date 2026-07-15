@@ -452,4 +452,27 @@ class Program
 
 		Console.WriteLine($"Price updated from OMR {oldPrice:F2} to OMR {newPrice:F2}.");
 	}
+
+	// case 9
+	static void GuestLookupByName()
+	{
+		Console.WriteLine("--- Guest Lookup by Name ---");
+
+		Console.Write("Enter name or partial name: ");
+		string search = Console.ReadLine();
+
+		var matches = guests.Where(g => g.GuestName.ToLower().Contains(search.ToLower())).ToList();
+
+		if (matches.Count == 0)
+		{
+			Console.WriteLine("No guests matched that search.");
+			return;
+		}
+
+		Console.WriteLine($"Found {matches.Count} match(es):");
+		foreach (Guest g in matches)
+		{
+			Console.WriteLine($"{g.GuestId} | {g.GuestName} | Room: {g.RoomNumber}");
+		}
+	}
 }
