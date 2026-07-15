@@ -154,4 +154,143 @@ class Program
 		if (!ok || value <= 0) return -1;
 		return value;
 	}
+
+	// case 1
+	static void AddNewRoom()
+	{
+		Console.WriteLine("--- Add New Room ---");
+
+		int roomNumber = ReadPositiveInt("Enter room number: ");
+		if (roomNumber == -1)
+		{
+			Console.WriteLine("Room number must be a positive number.");
+			return;
+		}
+
+		if (rooms.Any(r => r.RoomNumber == roomNumber))
+		{
+			Console.WriteLine("A room with this number already exists.");
+			return;
+		}
+
+		Console.Write("Enter room type (Single/Double/Suite): ");
+		string roomType = Console.ReadLine();
+
+		double price = ReadPositiveDouble("Enter price per night: ");
+		if (price == -1)
+		{
+			Console.WriteLine("Price must be a positive number.");
+			return;
+		}
+
+		Room newRoom = new Room(roomNumber, roomType, price, true);
+		rooms.Add(newRoom);
+
+		Console.WriteLine("Room added successfully!");
+		newRoom.DisplayRoom();
+		Console.WriteLine($"Total rooms now: {rooms.Count}");
+	}
+
+	// case 2
+	static void RegisterNewGuest()
+	{
+		Console.WriteLine("--- Register New Guest ---");
+
+		Console.Write("Enter guest name: ");
+		string name = Console.ReadLine();
+
+		Console.Write("Enter check-in date: ");
+		string checkInDate = Console.ReadLine();
+
+		int nights = ReadPositiveInt("Enter number of nights: ");
+		if (nights == -1)
+		{
+			Console.WriteLine("Number of nights must be a positive number.");
+			return;
+		}
+
+		string guestId = "G" + (guests.Count + 1).ToString("000");
+		Guest newGuest = new Guest(guestId, name, checkInDate, nights);
+		guests.Add(newGuest);
+
+		Console.WriteLine("Guest registered successfully!");
+		newGuest.DisplayGuest();
+	}
+
+	// case 3
+	static void BookRoom()
+	{
+		Console.WriteLine("--- Book a Room for a Guest ---");
+
+		Console.Write("Enter guest ID: ");
+		string guestId = Console.ReadLine();
+
+		Guest guest = guests.FirstOrDefault(g => g.GuestId == guestId);
+		if (guest == null)
+		{
+			Console.WriteLine("Guest not found.");
+			return;
+		}
+
+		int roomNumber = ReadPositiveInt("Enter room number to book: ");
+		Room room = rooms.FirstOrDefault(r => r.RoomNumber == roomNumber);
+		if (room == null)
+		{
+			Console.WriteLine("Room not found.");
+			return;
+		}
+
+		if (!room.IsAvailable)
+		{
+			Console.WriteLine("Room is already booked.");
+			return;
+		}
+
+		guest.RoomNumber = room.RoomNumber.ToString();
+		room.IsAvailable = false;
+
+		Console.WriteLine("Booking confirmed!");
+		Console.WriteLine($"Guest: {guest.GuestName}");
+		Console.WriteLine($"Room: {room.RoomNumber} ({room.RoomType}) - OMR {room.PricePerNight:F2}/night");
+		Console.WriteLine($"Total nights: {guest.TotalNights}");
+		Console.WriteLine($"Total cost: OMR {guest.CalculateTotalCost(rooms):F2}");
+	}
+
+	// case 4
+	static void ViewAllRooms()
+	{
+		Console.WriteLine("--- All Rooms ---");
+
+		if (rooms.Count == 0)
+		{
+			Console.WriteLine("No rooms have been added yet.");
+			return;
+		}
+
+		Console.WriteLine($"Total rooms: {rooms.Count()}");
+		var sortedRooms = rooms.OrderBy(r => r.RoomNumber).Select(r => r);
+		foreach (Room r in sortedRooms)
+		{
+			r.DisplayRoom();
+		}
+	}
+
+	// case 5
+	static void ViewAllGuests()
+	{
+		Console.WriteLine("--- All Guests ---");
+
+		if (guests.Count == 0)
+		{
+			Console.WriteLine("No guests have been registered yet.");
+			return;
+		}
+
+		Console.WriteLine($"Total guests: {guests.Count()}");
+		var sortedGuests = guests.OrderBy(g => g.GuestName);
+		foreach (Guest g in sortedGuests)
+		{
+			g.DisplayGuest();
+		}
+	}
 }
