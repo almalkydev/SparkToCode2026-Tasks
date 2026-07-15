@@ -659,4 +659,35 @@ class Program
 		Console.WriteLine($"Room: {topBooking.RoomNumber}");
 		Console.WriteLine($"Total cost: OMR {topBooking.Cost:F2}");
 	}
+
+	// case 15
+	static void GuestPaginationViewer()
+	{
+		Console.WriteLine("--- Guest Pagination Viewer ---");
+
+		int pageSize = 3;
+		int totalPages = (int)Math.Ceiling(guests.Count / (double)pageSize);
+
+		if (totalPages == 0)
+		{
+			Console.WriteLine("No guests have been registered yet.");
+			return;
+		}
+
+		int pageNumber = ReadPositiveInt($"Enter page number (1-{totalPages}): ");
+
+		if (pageNumber < 1 || pageNumber > totalPages)
+		{
+			Console.WriteLine("That page does not exist.");
+			return;
+		}
+
+		var pageGuests = guests.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+
+		Console.WriteLine($"Page {pageNumber} of {totalPages}:");
+		foreach (Guest g in pageGuests)
+		{
+			g.DisplayGuest();
+		}
+	}
 }
