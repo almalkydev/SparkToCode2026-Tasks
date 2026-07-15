@@ -600,4 +600,38 @@ class Program
 			Console.WriteLine(line);
 		}
 	}
+
+	// case 13
+	static void ExtendGuestStay()
+	{
+		Console.WriteLine("--- Extend Guest Stay ---");
+
+		Console.Write("Enter guest ID: ");
+		string guestId = Console.ReadLine();
+
+		Guest guest = guests.FirstOrDefault(g => g.GuestId == guestId);
+		if (guest == null)
+		{
+			Console.WriteLine("Guest not found.");
+			return;
+		}
+
+		if (guest.RoomNumber == "Not Assigned")
+		{
+			Console.WriteLine("This guest has no active booking to extend.");
+			return;
+		}
+
+		int extraNights = ReadPositiveInt("Enter additional nights: ");
+		if (extraNights == -1)
+		{
+			Console.WriteLine("Invalid number of nights. No change made.");
+			return;
+		}
+
+		guest.TotalNights += extraNights;
+
+		Console.WriteLine($"Updated total nights: {guest.TotalNights}");
+		Console.WriteLine($"New total cost: OMR {guest.CalculateTotalCost(rooms):F2}");
+	}
 }
