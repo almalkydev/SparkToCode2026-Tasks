@@ -426,4 +426,30 @@ class Program
 			Console.WriteLine(line);
 		}
 	}
+
+	// case 8
+	static void UpdateRoomPrice()
+	{
+		Console.WriteLine("--- Update Room Price ---");
+
+		int roomNumber = ReadPositiveInt("Enter room number: ");
+		Room room = rooms.FirstOrDefault(r => r.RoomNumber == roomNumber);
+		if (room == null)
+		{
+			Console.WriteLine("Room not found.");
+			return;
+		}
+
+		double newPrice = ReadPositiveDouble("Enter new price per night: ");
+		if (newPrice == -1)
+		{
+			Console.WriteLine("Invalid price. No change made.");
+			return;
+		}
+
+		double oldPrice = room.PricePerNight;
+		room.PricePerNight = newPrice;
+
+		Console.WriteLine($"Price updated from OMR {oldPrice:F2} to OMR {newPrice:F2}.");
+	}
 }
